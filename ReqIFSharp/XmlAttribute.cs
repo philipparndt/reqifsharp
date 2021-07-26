@@ -23,21 +23,21 @@ namespace ReqIFSharp
     /// <summary>
     /// Encapsulates an xml attribute extracted from a ReqIF document
     /// </summary>
-    internal class XmlAttribute
+    public class XmlAttribute
     {
         /// <summary>
         /// Gets or sets the namespace prefix of the attribute
         /// </summary>
-        internal string Prefix { get; set; }
+        public string Prefix { get; set; }
 
         /// <summary>
         /// Gets or sets the local name of the attribute
         /// </summary>
-        internal string LocalName { get; set; }
+        public string LocalName { get; set; }
 
         /// <summary>
         /// Gets or sets the value of the attribute.
         /// </summary>
-        internal string Value { get; set; }
+        public string Value { get; set; }
     }
 }

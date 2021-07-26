@@ -32,7 +32,10 @@ namespace ReqIFSharp
     [XmlRoot("REQ-IF", Namespace = "http://www.omg.org/spec/ReqIF/20110401/reqif.xsd", IsNullable = false)]
     public class ReqIF : IXmlSerializable
     {
-        private List<XmlAttribute> attributes = new List<XmlAttribute>();
+        /// <summary>
+        /// Gets the XML Attributes in the document. Use this to add additional namespaces.
+        /// </summary>
+        public List<XmlAttribute> Attributes = new List<XmlAttribute>();
 
         /// <summary>
         /// Gets the mandatory Exchange Document header, which contains metadata relevant for this exchange.
@@ -90,7 +93,7 @@ namespace ReqIFSharp
                         Value = reader.Value
                     };
 
-                    attributes.Add(xmlAttribute);
+                    Attributes.Add(xmlAttribute);
                 }
             }
 
@@ -143,7 +146,7 @@ namespace ReqIFSharp
                 writer.WriteAttributeString("lang", "xml", this.Lang);
             }
 
-            foreach (var xmlAttribute in this.attributes)
+            foreach (var xmlAttribute in this.Attributes)
             {
                 if (xmlAttribute.Prefix != string.Empty)
                 {
